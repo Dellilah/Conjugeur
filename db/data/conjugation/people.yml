@@ -1,0 +1,32 @@
+person_1:
+  id: 1
+  name: "je"
+  short: "j"
+person_2:
+  id: 2
+  name: "tu"
+  short: "t"
+person_3:
+  id: 3
+  name: "il"
+  short: "il"
+person_4:
+  id: 4
+  name: "elle"
+  short: "elle"
+person_5:
+  id: 5
+  name: "nous"
+  short: "nous"
+person_6:
+  id: 6
+  name: "vous"
+  short: "vous"
+person_7:
+  id: 7
+  name: "ils"
+  short: "ils"
+person_8:
+  id: 8
+  name: "elles"
+  short: "elles"

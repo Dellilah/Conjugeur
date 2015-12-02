@@ -1,0 +1,470 @@
+verb_1:
+  id: 1
+  infinitive: aimer
+  group: 1
+  translation_pl: podoba
+verb_2:
+  id: 2
+  infinitive: fuir
+  group: 3
+  translation_pl: uciekać
+verb_3:
+  id: 3
+  infinitive: gésir
+  group: 3
+  translation_pl: "żołądek"
+verb_4:
+  id: 4
+  infinitive: grandir
+  group: 2
+  translation_pl: rosnąć
+verb_5:
+  id: 5
+  infinitive: haïr
+  group: 2
+  translation_pl: nienawidzić
+verb_6:
+  id: 6
+  infinitive: haleter
+  group: 1
+  translation_pl: dyszeć
+verb_7:
+  id: 7
+  infinitive: aller
+  group: 3
+  translation_pl: chodzić
+verb_8:
+  id: 8
+  infinitive: jeter
+  group: 1
+  translation_pl: rzucać
+verb_9:
+  id: 9
+  infinitive: joindre
+  group: 3
+  translation_pl: stykać
+verb_10:
+  id: 10
+  infinitive: lire
+  group: 3
+  translation_pl: czytać
+verb_11:
+  id: 11
+  infinitive: manger
+  group: 1
+  translation_pl: jeść
+verb_12:
+  id: 12
+  infinitive: messeoir
+  group: 3
+  translation_pl: ponownie
+verb_13:
+  id: 13
+  infinitive: mettre
+  group: 3
+  translation_pl: kłaść
+verb_14:
+  id: 14
+  infinitive: modeler
+  group: 1
+  translation_pl: modelować
+verb_15:
+  id: 15
+  infinitive: moudre
+  group: 3
+  translation_pl: mielić
+verb_16:
+  id: 16
+  infinitive: mourir
+  group: 3
+  translation_pl: umrzeć
+verb_17:
+  id: 17
+  infinitive: mouvoir
+  group: 3
+  translation_pl: to
+verb_18:
+  id: 18
+  infinitive: naître
+  group: 3
+  translation_pl: rodzić
+verb_19:
+  id: 19
+  infinitive: ouïr
+  group: 3
+  translation_pl: tak
+verb_20:
+  id: 20
+  infinitive: paître
+  group: 3
+  translation_pl: paître
+verb_21:
+  id: 21
+  infinitive: payer
+  group: 1
+  translation_pl: opłacać
+verb_22:
+  id: 22
+  infinitive: peindre
+  group: 3
+  translation_pl: malować
+verb_23:
+  id: 23
+  infinitive: peser
+  group: 1
+  translation_pl: ważyć
+verb_24:
+  id: 24
+  infinitive: placer
+  group: 1
+  translation_pl: umieszczać
+verb_25:
+  id: 25
+  infinitive: plaire
+  group: 3
+  translation_pl: podobać
+verb_26:
+  id: 26
+  infinitive: pleuvoir
+  group: 3
+  translation_pl: pada
+verb_27:
+  id: 27
+  infinitive: pourvoir
+  group: 3
+  translation_pl: pourvoir
+verb_28:
+  id: 28
+  infinitive: pouvoir
+  group: 3
+  translation_pl: móc
+verb_29:
+  id: 29
+  infinitive: prendre
+  group: 3
+  translation_pl: brać
+verb_30:
+  id: 30
+  infinitive: raccourcir
+  group: 2
+  translation_pl: skracać
+verb_31:
+  id: 31
+  infinitive: recevoir
+  group: 3
+  translation_pl: otrzymywać
+verb_32:
+  id: 32
+  infinitive: appeler
+  group: 1
+  translation_pl: wołać
+verb_33:
+  id: 33
+  infinitive: apprécier
+  group: 1
+  translation_pl: oceniać
+verb_34:
+  id: 34
+  infinitive: rendre
+  group: 3
+  translation_pl: zwracać
+verb_35:
+  id: 35
+  infinitive: repaître
+  group: 3
+  translation_pl: karmić
+verb_36:
+  id: 36
+  infinitive: rire
+  group: 3
+  translation_pl: "śmiać"
+verb_37:
+  id: 37
+  infinitive: rougir
+  group: 2
+  translation_pl: czerwienieć
+verb_38:
+  id: 38
+  infinitive: savoir
+  group: 3
+  translation_pl: wiedzieć
+verb_39:
+  id: 39
+  infinitive: sentir
+  group: 3
+  translation_pl: odczuwać
+verb_40:
+  id: 40
+  infinitive: seoir
+  group: 3
+  translation_pl: posadzić
+verb_41:
+  id: 41
+  infinitive: servir
+  group: 3
+  translation_pl: podawać
+verb_42:
+  id: 42
+  infinitive: assaillir
+  group: 3
+  translation_pl: assaillir
+verb_43:
+  id: 43
+  infinitive: suivre
+  group: 3
+  translation_pl: iść
+verb_44:
+  id: 44
+  infinitive: surseoir
+  group: 3
+  translation_pl: surseoir
+verb_45:
+  id: 45
+  infinitive: taire
+  group: 3
+  translation_pl: milczeć
+verb_46:
+  id: 46
+  infinitive: tenir
+  group: 3
+  translation_pl: trzymać
+verb_47:
+  id: 47
+  infinitive: asseoir
+  group: 3
+  translation_pl: posadzić
+verb_48:
+  id: 48
+  infinitive: assiéger
+  group: 1
+  translation_pl: oblegać
+verb_49:
+  id: 49
+  infinitive: traire
+  group: 3
+  translation_pl: doić
+verb_50:
+  id: 50
+  infinitive: vaincre
+  group: 3
+  translation_pl: zwyciężać
+verb_51:
+  id: 51
+  infinitive: valoir
+  group: 3
+  translation_pl: kosztować
+verb_52:
+  id: 52
+  infinitive: vêtir
+  group: 3
+  translation_pl: ubierać
+verb_53:
+  id: 53
+  infinitive: vivre
+  group: 3
+  translation_pl: "żyć"
+verb_54:
+  id: 54
+  infinitive: voir
+  group: 3
+  translation_pl: widzieć
+verb_55:
+  id: 55
+  infinitive: vouloir
+  group: 3
+  translation_pl: "żądać"
+verb_56:
+  id: 56
+  infinitive: absoudre
+  group: 3
+  translation_pl: absoudre
+verb_57:
+  id: 57
+  infinitive: avoir
+  group: 3
+  translation_pl: mieć
+verb_58:
+  id: 58
+  infinitive: battre
+  group: 3
+  translation_pl: bić
+verb_59:
+  id: 59
+  infinitive: boire
+  group: 3
+  translation_pl: pić
+verb_60:
+  id: 60
+  infinitive: bouillir
+  group: 3
+  translation_pl: gotować
+verb_61:
+  id: 61
+  infinitive: broyer
+  group: 1
+  translation_pl: rozdrabniać
+verb_62:
+  id: 62
+  infinitive: céder
+  group: 1
+  translation_pl: ustępować
+verb_63:
+  id: 63
+  infinitive: ceindre
+  group: 3
+  translation_pl: malować
+verb_64:
+  id: 64
+  infinitive: celer
+  group: 1
+  translation_pl: "ścinać"
+verb_65:
+  id: 65
+  infinitive: choir
+  group: 3
+  translation_pl: wybór
+verb_66:
+  id: 66
+  infinitive: clore
+  group: 3
+  translation_pl: otwierać
+verb_67:
+  id: 67
+  infinitive: conclure
+  group: 3
+  translation_pl: zawierać
+verb_68:
+  id: 68
+  infinitive: confire
+  group: 3
+  translation_pl: gęś
+verb_69:
+  id: 69
+  infinitive: connaître
+  group: 3
+  translation_pl: znać
+verb_70:
+  id: 70
+  infinitive: coudre
+  group: 3
+  translation_pl: szyć
+verb_71:
+  id: 71
+  infinitive: courir
+  group: 3
+  translation_pl: spieszyć
+verb_72:
+  id: 72
+  infinitive: acheter
+  group: 1
+  translation_pl: kupować
+verb_73:
+  id: 73
+  infinitive: acquérir
+  group: 3
+  translation_pl: nabywać
+verb_74:
+  id: 74
+  infinitive: couvrir
+  group: 3
+  translation_pl: przykrywać
+verb_75:
+  id: 75
+  infinitive: craindre
+  group: 3
+  translation_pl: bać
+verb_76:
+  id: 76
+  infinitive: créer
+  group: 1
+  translation_pl: tworzyć
+verb_77:
+  id: 77
+  infinitive: croire
+  group: 3
+  translation_pl: wierzyć
+verb_78:
+  id: 78
+  infinitive: croître
+  group: 3
+  translation_pl: rozwijać
+verb_79:
+  id: 79
+  infinitive: cueillir
+  group: 3
+  translation_pl: zrywać
+verb_80:
+  id: 80
+  infinitive: cuire
+  group: 3
+  translation_pl: gotować
+verb_81:
+  id: 81
+  infinitive: déchoir
+  group: 3
+  translation_pl: déchoir
+verb_82:
+  id: 82
+  infinitive: devoir
+  group: 3
+  translation_pl: być
+verb_83:
+  id: 83
+  infinitive: dire
+  group: 3
+  translation_pl: mówić
+verb_84:
+  id: 84
+  infinitive: divertir
+  group: 2
+  translation_pl: zabawiać
+verb_85:
+  id: 85
+  infinitive: dormir
+  group: 3
+  translation_pl: spać
+verb_86:
+  id: 86
+  infinitive: "échoir"
+  group: 3
+  translation_pl: "échoir"
+verb_87:
+  id: 87
+  infinitive: "écrire"
+  group: 3
+  translation_pl: pisać
+verb_88:
+  id: 88
+  infinitive: envoyer
+  group: 1
+  translation_pl: wysyłać
+verb_89:
+  id: 89
+  infinitive: "épousseter"
+  group: 1
+  translation_pl: wycierać
+verb_90:
+  id: 90
+  infinitive: "être"
+  group: 3
+  translation_pl: być
+verb_91:
+  id: 91
+  infinitive: faillir
+  group: 3
+  translation_pl: mało
+verb_92:
+  id: 92
+  infinitive: faire
+  group: 3
+  translation_pl: wykonywać
+verb_93:
+  id: 93
+  infinitive: falloir
+  group: 3
+  translation_pl: potrzeba
+verb_94:
+  id: 94
+  infinitive: finir
+  group: 2
+  translation_pl: dobiegać

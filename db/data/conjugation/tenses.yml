@@ -1,0 +1,60 @@
+tense_1:
+  id: 1
+  symbol: :present
+  label: "Présent"
+tense_2:
+  id: 2
+  symbol: :passe_simple
+  label: "Passé simple"
+tense_3:
+  id: 3
+  symbol: :passe_compose
+  label: "Passé composé"
+tense_4:
+  id: 4
+  symbol: :imparfait
+  label: "Imparfait"
+tense_5:
+  id: 5
+  symbol: :plus_que_parfait
+  label: "Plus-que-parfait"
+tense_6:
+  id: 6
+  symbol: :passe_anterieur
+  label: "Passé antérieur"
+tense_7:
+  id: 7
+  symbol: :futur_simple
+  label: "Futur simple"
+tense_8:
+  id: 8
+  symbol: :futur_anterieur
+  label: "Futur antérieur"
+tense_9:
+  id: 9
+  symbol: :subjonctif_present
+  label: "Subjonctif présent"
+tense_10:
+  id: 10
+  symbol: :subjonctif_passe
+  label: "Subjonctif passé"
+tense_11:
+  id: 11
+  symbol: :subjonctif_imparfait
+  label: "Subjonctif imparfait"
+tense_12:
+  id: 12
+  symbol: :subjonctif_plus_que_parfait
+  label: "Subjonctif plus que parfait"
+tense_13:
+  id: 13
+  symbol: :conditionnel_present
+  label: "Conditionnel présent"
+tense_14:
+  id: 14
+  symbol: :conditionnel_passe_premiere
+  label: "Conditionnel passé première"
+tense_7:
+  id: 7
+  symbol: :conditionnel_passe_deuxieme
+  label: "Conditionnel passé deuxième"
