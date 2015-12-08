@@ -1,0 +1,31 @@
+pl:
+  present: "Présent"
+  passe_simple: "Passé simple"
+  passe_compose: "Passé composé"
+  imparfait: "Imparfait"
+  plus_que_parfait: "Plus-que-parfait"
+  passe_anterieur: "Passé antérieur"
+  futur_simple: "Futur simple"
+  futur_anterieur: "Futur antérieur"
+  subjonctif_present: "Subjonctif présent"
+  subjonctif_passe: "Subjonctif passé"
+  subjonctif_imparfait: "Subjonctif imparfait"
+  subjonctif_plus_que_parfait: "Subjonctif plus que parfait"
+  conditionnel_present: "Conditionnel présent"
+  conditionnel_passe_premiere: "Conditionnel passé première"
+  conditionnel_passe_deuxieme: "Conditionnel passé deuxième"
+  activemodel:
+    errors:
+      format: "Pole %{attribute}: %{message}"
+      messages:
+        invalid: "nieprawidłowa wartość"
+        blank: "nie może być puste"
+    attributes:
+      exercise_settings_form:
+        tenses: "czasy gramatyczne"
+        groups: "grupy czasowników"
+        groups_1: "I grupa"
+        groups_2: "II grupa"
+        groups_3: "III grupa"
+        excluded_verbs: "Oprócz czasowników..."
+        included_verbs: "Plus czasowniki..."
