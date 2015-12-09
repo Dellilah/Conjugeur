@@ -44,11 +44,11 @@ module RandomExercises
     end
 
     def excluded_infinitives
-      settings[:excluded_verbs].split(',')
+      settings[:excluded_verbs].split(',').map(&:strip)
     end
 
     def included_infinitives
-      settings[:included_verbs].split(',')
+      settings[:included_verbs].split(',').map(&:strip)
     end
   end
 end
