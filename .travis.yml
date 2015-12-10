@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+ - "2.2.1"
+notifications:
+  email: false
+before_script:
+  - rake db:create RAILS_ENV=test
+  - rake db:migrate RAILS_ENV=test
+script: bundle exec rspec spec
