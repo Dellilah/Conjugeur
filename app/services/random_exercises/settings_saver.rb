@@ -2,18 +2,18 @@ module RandomExercises
   class SettingsSaver
     extend ::Concerns::Performable
 
-    def initialize(settings, session)
+    def initialize(settings, contener)
       @settings = settings
-      @session = session
+      @contener = contener
     end
 
     def perform
-      session[:random_exercise] = { forms_ids: chosen_forms_ids }
+      contener[:random_exercise] = { forms_ids: chosen_forms_ids }
     end
 
     private
 
-    attr_reader :settings, :session
+    attr_reader :settings, :contener
 
     def chosen_forms_ids
       Conjugation::Form.where_in(tense_id: tenses, verb_id: verbs).map(&:id)

@@ -5,12 +5,15 @@ describe "AppRouting" do
     expect(get: "/").to route_to(controller: "main_page", action: "index")
   }
   specify {
-    expect(get: "cwiczenie-losowe/new").to route_to(controller: "random_exercises", action: "new")
+    expect(get: "kryteria/new").to route_to(controller: "exercise_settings", action: "new")
   }
   specify {
-    expect(post: "cwiczenie-losowe").to route_to(controller: "random_exercises", action: "create")
+    expect(post: "kryteria").to route_to(controller: "exercise_settings", action: "create")
   }
   specify {
-    expect(get: "cwiczenie-losowe/cwicz").to route_to(controller: "random_exercises", action: "exercise")
+    expect(get: "losowe/cwiczenie/new").to route_to(controller: "random_exercise/random_exercises", action: "new")
+  }
+  specify {
+    expect(post: "losowe/cwiczenie/sprawdz").to route_to(controller: "random_exercise/random_exercises", action: "check")
   }
 end

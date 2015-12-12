@@ -1,4 +1,4 @@
-class RandomExercisesController < ApplicationController
+class ExerciseSettingsController < ApplicationController
   before_filter :load_form
 
   def new; end
@@ -6,7 +6,7 @@ class RandomExercisesController < ApplicationController
   def create
     if @form.valid?
       ::RandomExercises::SettingsSaver.perform(@form.attributes, session)
-      redirect_to action: 'exercise'
+      redirect_to new_random_exercises_url
     else
       render :new
     end

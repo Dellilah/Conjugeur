@@ -16,6 +16,11 @@ pl:
   conditionnel_present: "Conditionnel présent"
   conditionnel_passe_premiere: "Conditionnel passé première"
   conditionnel_passe_deuxieme: "Conditionnel passé deuxième"
+  random_exercise:
+    random_exercises:
+      check:
+        notice: "Poprawna odpowiedź!"
+        error: "Błędna odpowiedź. Poprawna: %{correct}"
   activemodel:
     errors:
       format: "Pole %{attribute}: %{message}"
@@ -23,6 +28,8 @@ pl:
         invalid: "nieprawidłowa wartość"
         blank: "nie może być puste"
     attributes:
+      exercise_form:
+        answer: "Odpowiedź:"
       exercise_settings_form:
         tenses: "czasy gramatyczne"
         groups: "grupy czasowników"

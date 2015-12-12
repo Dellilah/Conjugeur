@@ -6,8 +6,14 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'main_page#index'
 
-  resource :random_exercises, path: 'cwiczenie-losowe' do
-    get '/cwicz', action: :exercise, as: :exercise
+  resource :exercise_settings, path: 'kryteria' do
+    # get '/cwicz', action: :exercise, as: :exercise
+  end
+
+  scope module: :random_exercise, path: :losowe do
+    resource :random_exercises, path: 'cwiczenie' do
+      post '/sprawdz', action: :check, as: :check
+    end
   end
 
   # Example of regular route:
