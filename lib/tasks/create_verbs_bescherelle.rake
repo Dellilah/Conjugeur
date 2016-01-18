@@ -69,7 +69,8 @@ namespace :dev do
         'id' =>             @counter,
         'infinitive' =>     verb_data["infinitive"],
         'group' =>          verb_data["group"],
-        'translation_pl' => verb_data["translation"]
+        'translation_pl' => verb_data["translation"],
+        'enabled' =>        true
       }
     }
   end

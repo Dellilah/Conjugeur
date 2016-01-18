@@ -12,6 +12,5 @@ module ActiveHashWhere
     options.each do |key, values|
       result = result - (all.select{ |v| values.include?(v.send(key))})
     end
-    result
   end
 end
