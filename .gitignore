@@ -16,3 +16,7 @@
 !/log/.keep
 /tmp
 /public/temp_verbs/*
+
+#Database settings
+/config/database.yml
+/config/configuration.yml
