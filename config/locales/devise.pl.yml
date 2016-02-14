@@ -1,6 +1,16 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
 pl:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: "Hasło nie może być puste"
+              too_short: "Hasło musi mieć conajmniej 5 znaków"
+            email:
+              blank: "Email nie może być pusty"
   devise:
     confirmations:
       confirmed: "Twoje konto zostało aktywowane. Zostałeś pomyślnie zalogowany."
@@ -57,4 +67,4 @@ pl:
       not_locked: "nie był zablokowany"
       not_saved:
         one: "%{resource} nie został zapisany z powodu błędu:"
-        other: "%{resource} nie został zapisany z powodu następujących błędów:"
+        other: "Użytkownik nie został zapisany z powodu następujących błędów:"

@@ -1,4 +1,6 @@
 pl:
+  errors:
+    format: "%{message}"
   present: "Présent"
   passe_simple: "Passé simple"
   passe_compose: "Passé composé"

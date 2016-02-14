@@ -33,6 +33,8 @@ gem 'factory_girl_rails'
 
 gem 'devise'
 
+gem 'toastr-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -56,3 +58,4 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
