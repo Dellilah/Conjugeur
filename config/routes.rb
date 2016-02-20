@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'autocomplete/verbs' => 'verbs#all'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
