@@ -20,19 +20,7 @@ module RandomExercises
     end
 
     def verbs
-      ((groups_verbs & not_excluded_verbs) + included_verbs).map(&:id)
-    end
-
-    def groups_verbs
-      Conjugation::Verb.where_in(group: groups)
-    end
-
-    def not_excluded_verbs
-      Conjugation::Verb.where_not_in(infinitive: excluded_infinitives)
-    end
-
-    def included_verbs
-      Conjugation::Verb.where_in(infinitive: included_infinitives)
+      ::ChosenVerbs.perform(groups, excluded_ids, included_ids).map(&:id)
     end
 
     def tenses
@@ -43,12 +31,12 @@ module RandomExercises
       settings[:groups]
     end
 
-    def excluded_infinitives
-      settings[:excluded_verbs].split(',').map(&:strip)
+    def excluded_ids
+      settings[:excluded_verbs]
     end
 
-    def included_infinitives
-      settings[:included_verbs].split(',').map(&:strip)
+    def included_ids
+      settings[:included_verbs]
     end
   end
 end

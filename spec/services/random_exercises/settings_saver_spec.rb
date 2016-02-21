@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe RandomExercises::SettingsSaver do
-  let(:settings) { { groups: [2], tenses: [1], excluded_verbs: "finir, grandir, rougir, divertir, raccourcir", included_verbs: "aimer"} }
+  let(:settings) { { groups: [2], tenses: [1], excluded_verbs: [4, 5, 30, 37, 84], included_verbs: [1]} }
   let(:session) { {} }
 
   subject { described_class.new(settings, session) }

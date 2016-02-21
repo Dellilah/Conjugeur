@@ -1,19 +1,16 @@
 class ExerciseSettingsForm < BaseForm
   attribute :tenses, Array[Integer]
   attribute :groups, Array[Integer]
-  attribute :excluded_verbs, String
-  attribute :included_verbs, String
+  attribute :excluded_verbs, Array[Integer]
+  attribute :included_verbs, Array[Integer]
 
   validates :tenses, presence: true
-  validates :groups, presence: true
-  validates :excluded_verbs, format: { with: /\A([a-zA-Z]*)(\,\s*[a-zA-Z]+)*\z/ }
-  validates :included_verbs, format: { with: /\A([a-zA-Z]*)(\,\s*[a-zA-Z]+)*\z/ }
 
   validate :tenses_exist?
-  validate :groups_exist?
+  validate :verbs_exist?
 
-  def groups_exist?
-    errors.add(:groups, :invalid) unless (groups-(1..3).to_a).empty?
+  def verbs_exist?
+    errors.add(:groups, :no_verbs) unless ::VerbsAvailablePolicy.new(groups, excluded_verbs, included_verbs).applies?
   end
 
   def tenses_exist?

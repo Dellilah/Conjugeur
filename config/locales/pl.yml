@@ -23,6 +23,13 @@ pl:
         error: "Błędna odpowiedź. Poprawna: %{correct}"
   activemodel:
     errors:
+      models:
+        exercise_settings_form:
+          attributes:
+            groups:
+              no_verbs: 'Wskazany zakres czasowników jest pusty'
+            tenses:
+              blank: "Proszę wybrać przynajmniej jeden czas gramatyczny"
       format: "Pole %{attribute}: %{message}"
       messages:
         invalid: "nieprawidłowa wartość"

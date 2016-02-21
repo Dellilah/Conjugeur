@@ -1,5 +1,5 @@
 <div>
-  <%= form_for(@form, url: exercise_settings_path) do |f| %>
+  <%= form_for(@context.form, as: :exercise_settings_form, url: exercise_settings_path) do |f| %>
     <%= f.render_errors %>
     <div class="form-group row">
       <label class="col-sm-1">Czasy gramatyczne</label>
@@ -21,21 +21,12 @@
         </div>
       </div>
     </div>
-    <div class="form-group row">
-      <%= f.label(:excluded_verbs, class: 'col-sm-2') %>
-      <div class="col-sm-10">
-        <%= text_field_tag(:excluded, nil, class: 'x-autocomplete') %>
-        <%= f.hidden_field(:excluded_verbs, class: 'x-verbs-hidden') %>
-        <div class="x-verbs-result"></div>
-      </div>
+    <div class="form-group row x-excluded-verbs-container">
+      <%= render partial: "exercise_settings/elements/excluded_verbs", locals: { f: f, presenter: @context.presenter } %>
     </div>
-    <div class="form-group row">
-      <%= f.label(:included_verbs, class: 'col-sm-2') %>
-      <div class="col-sm-10">
-        <%= text_field_tag(:included, nil, class: 'x-autocomplete') %>
-        <%= f.hidden_field(:included_verbs, class: 'x-verbs-hidden') %>
-        <div class="x-verbs-result"></div>
-      </div>
+
+    <div class="form-group row x-included-verbs-container">
+      <%= render partial: "exercise_settings/elements/included_verbs", locals: { f: f, presenter: @context.presenter } %>
     </div>
     <%= f.submit("Ćwiczenia: start!", class: "btn btn-primary btn-lg btn-block") %>
   <% end %>

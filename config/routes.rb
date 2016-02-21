@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resource :exercise_settings, path: 'kryteria' do
     # get '/cwicz', action: :exercise, as: :exercise
+    post 'reload-section', action: :reload_section, as: :reload_section
   end
 
   scope module: :random_exercise, path: :losowe do

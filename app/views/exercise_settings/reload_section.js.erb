@@ -1,0 +1,7 @@
+var section = $('<%= @context.presenter.js_class %>');
+section.html(
+	'<%= j(fields_for(:exercise_settings_form, @context.form) do |f| %>
+		<%= render(partial: "exercise_settings/elements/#{@context.presenter.partial}", locals: { f: f, presenter: @context.presenter }) %>
+	<% end) %>'
+);
+(new ExerciseSettingsForm).init();

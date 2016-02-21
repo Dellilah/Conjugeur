@@ -10,23 +10,50 @@ var ExerciseSettingsForm = function () {
     });
   };
 
-  this.saveToExclude = function (parentNode, verb_id) {
-    var hiddenField = $(parentNode).find('.x-verbs-hidden');
-    hiddenField.val(hiddenField.val() + " " +verb_id);
+  this.setData = function (source, previous_ids, suggestion) {
+    if (source == "excluded") {
+      return { excluded_verbs: previous_ids.concat(" "+suggestion.data) };
+    } else {
+      return { included_verbs: previous_ids.concat(" "+suggestion.data) };
+    }
   };
 
-  this.displayToExclude = function (parentNode, verb, verb_id) {
-    var section = $(parentNode).find('.x-verbs-result');
-    $(section).append("<span data-id='"+verb_id+"'>"+verb+"<button class='x-remove-verb'>X</button></span>");
+  this.removeData = function (source, previous_ids, verbId) {
+    if (source == "excluded") {
+      return { excluded_verbs: previous_ids.replace(verbId, "") };
+    } else {
+      return { included_verbs: previous_ids.replace(verbId, "")  };
+    }
+  };
+
+  this.addVerb = function (node, suggestion) {
+    var that = this;
+    var previous_ids = $(node.parentNode).find('.x-verbs-hidden').val();
+    var source = $(node.parentNode).data('source');
+    $.ajax({
+      url: '/kryteria/reload-section',
+      data: {
+        exercise_settings_form: that.setData(source, previous_ids, suggestion)
+      },
+      type: 'POST',
+      dataType: 'script'
+    });
   };
 
   this.removeVerb = function (node) {
-    var parentNode = node.parentNode;
-    var verbId = $(parentNode).data('id');
-    var hiddenVerbs = parentNode.parentElement;
-    var value = $(hiddenVerbs).prev(".x-verbs-hidden").val().replace(" "+verbId, "");
-    $(hiddenVerbs).prev(".x-verbs-hidden").val(value);
-    $(parentNode).remove();
+    that = this;
+    parentNode = node.parentNode;
+    verbId = $(node).data('id');
+    source = $(parentNode.parentNode.parentNode).data('source');
+    previous_ids = $(parentNode.parentNode).prev('.x-verbs-hidden').val();
+    $.ajax({
+      url: '/kryteria/reload-section',
+      data: {
+        exercise_settings_form: that.removeData(source, previous_ids, verbId)
+      },
+      type: 'POST',
+      dataType: 'script'
+    });
   };
 
   this.init = function () {
@@ -58,15 +85,13 @@ var ExerciseSettingsForm = function () {
       ajaxSettings: { dataType: 'json' },
       serviceUrl: '/autocomplete/verbs',
       onSelect: function (suggestion) {
-        that.saveToExclude(this.parentNode, suggestion.data);
-        that.displayToExclude(this.parentNode, suggestion.value, suggestion.data);
-        $(this).val('');
+        that.addVerb(this, suggestion);
       }
     });
 
     $('.x-verbs-result').on('click', '.x-remove-verb', function(e){
-        e.preventDefault();
-        that.removeVerb(this);
+      e.preventDefault();
+      that.removeVerb(this);
     });
   };
 

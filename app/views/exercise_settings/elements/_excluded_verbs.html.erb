@@ -1,0 +1,8 @@
+<%= f.label(:excluded_verbs, class: 'col-sm-2') %>
+<div class="col-sm-10" data-source="excluded">
+  <%= text_field_tag(:excluded, nil, class: 'x-autocomplete') %>
+  <%= f.hidden_field(:excluded_verbs, class: 'x-verbs-hidden') %>
+  <div class="x-verbs-result">
+	 	<%= render partial: "exercise_settings/elements/verb", collection: presenter.excluded_verbs, as: :verb %>
+  </div>
+</div>
