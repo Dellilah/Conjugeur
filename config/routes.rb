@@ -19,6 +19,12 @@ Rails.application.routes.draw do
 
   get 'autocomplete/verbs' => 'verbs#all'
 
+  scope module: :personal do
+    resource :exercise_sets, path: 'zestawy-cwiczeniowe' do
+      get '/', action: :index, as: :index
+    end
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

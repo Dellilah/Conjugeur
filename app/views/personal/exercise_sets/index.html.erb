@@ -1,0 +1,9 @@
+<h4>Twoje zestawy ćwiczeniowe</h4>
+
+<ul class="list-group">
+	<%= render partial: "personal/exercise_sets/elements/details", collection: @context.user_exercise_sets, as: :exercise_set, locals: { presenter: @context.presenter } %>
+</ul>
+
+<script>
+  $(document).on("page:change", (new ExerciseSetDetails).init());
+</script>

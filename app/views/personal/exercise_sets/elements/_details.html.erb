@@ -1,0 +1,31 @@
+<li class="list-group-item">	
+	<div>
+		Zestaw: <%= exercise_set.name %>
+		Form do powtórzenia: xxx 
+		<!-- TODO : forms to repeat count -->
+		<%= button_tag "Ćwicz" %>
+		<%= link_to "Rozwiń", "#", class: "x-show-details", data: { group: exercise_set.id } %>
+		<%= link_to "Edytuj", "#" %>
+		<%= link_to "Staty", "#" %>
+	</div>
+	<%= content_tag :div, class: "hide x-details-group-#{exercise_set.id}" do %>
+		<p>
+			Wybrane czasy:
+			<strong><%= presenter.tenses_list(exercise_set) %></strong>
+		</p>
+		<p>
+			Wybrane grupy:
+			<strong><%= presenter.groups_list(exercise_set) %></strong>
+		</p>
+
+		<p>
+			Wykluczone czasowniki:
+			<strong><%= presenter.excluded_verbs_list(exercise_set) %></strong>
+		</p>
+
+		<p>
+			Dodane czasowniki:
+			<strong><%= presenter.included_verbs_list(exercise_set) %></strong>
+		</p>
+	<% end %>
+</li>

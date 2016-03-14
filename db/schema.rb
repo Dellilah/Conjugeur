@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312173950) do
+ActiveRecord::Schema.define(version: 20160314215919) do
+
+  create_table "personal_exercise_sets", force: :cascade do |t|
+    t.text    "excluded_verbs_ids"
+    t.text    "included_verbs_ids"
+    t.text    "tenses_ids"
+    t.text    "groups"
+    t.integer "user_id"
+    t.string  "name"
+  end
+
+  add_index "personal_exercise_sets", ["user_id"], name: "index_personal_exercise_sets_on_user_id"
 
   create_table "sessions", force: :cascade do |t|
     t.string   "session_id", null: false
@@ -22,16 +33,6 @@ ActiveRecord::Schema.define(version: 20160312173950) do
 
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
-
-  create_table "user_exercise_sets", force: :cascade do |t|
-    t.text    "excluded_verbs"
-    t.text    "included_verbs"
-    t.text    "tenses"
-    t.text    "groups"
-    t.integer "user_id"
-  end
-
-  add_index "user_exercise_sets", ["user_id"], name: "index_user_exercise_sets_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
