@@ -11,7 +11,7 @@ var ExerciseSettingsForm = function () {
   };
 
   this.setData = function (source, previous_ids, suggestion) {
-    if (source == "excluded") {
+    if (source === "excluded") {
       return { excluded_verbs: previous_ids.concat(" "+suggestion.data) };
     } else {
       return { included_verbs: previous_ids.concat(" "+suggestion.data) };
@@ -19,7 +19,7 @@ var ExerciseSettingsForm = function () {
   };
 
   this.removeData = function (source, previous_ids, verbId) {
-    if (source == "excluded") {
+    if (source === "excluded") {
       return { excluded_verbs: previous_ids.replace(verbId, "") };
     } else {
       return { included_verbs: previous_ids.replace(verbId, "")  };
@@ -41,11 +41,11 @@ var ExerciseSettingsForm = function () {
   };
 
   this.removeVerb = function (node) {
-    that = this;
-    parentNode = node.parentNode;
-    verbId = $(node).data('id');
-    source = $(parentNode.parentNode.parentNode).data('source');
-    previous_ids = $(parentNode.parentNode).prev('.x-verbs-hidden').val();
+    var that = this;
+    var parentNode = node.parentNode;
+    var verbId = $(node).data('id');
+    var source = $(parentNode.parentNode.parentNode).data('source');
+    var previous_ids = $(parentNode.parentNode).prev('.x-verbs-hidden').val();
     $.ajax({
       url: '/kryteria/reload-section',
       data: {

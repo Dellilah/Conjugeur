@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 	has_many :exercise_sets, 
-		class_name:  "Personal::ExerciseSet", 
-		foreign_key: :user_id
+	class_name:  "Personal::ExerciseSet", 
+	foreign_key: :user_id
 end

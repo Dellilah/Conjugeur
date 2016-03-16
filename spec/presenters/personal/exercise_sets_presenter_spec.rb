@@ -5,11 +5,13 @@ describe Personal::ExerciseSetsPresenter do
   let(:excluded) { Conjugation::Verb.where_in(id: [1,2,3]) }
   let(:included) { Conjugation::Verb.where_in(id: [4,5,6]) }
 
-	let(:exercise_set) { build(:empty_exercise_set, 
+  let(:exercise_set) { 
+    build(:empty_exercise_set, 
     tenses_ids: [1,2,3], 
     groups: [1,2], 
     excluded_verbs_ids: [1,2,3],
-    included_verbs_ids: [4,5,6]) }
+    included_verbs_ids: [4,5,6])
+  }
 
   subject { described_class.new }
 

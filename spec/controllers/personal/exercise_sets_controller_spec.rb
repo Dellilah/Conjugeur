@@ -8,10 +8,10 @@ describe Personal::ExerciseSetsController do
 	  sign_in user
 	end
 
-  it "Renders index template" do
-    get :index
-    expect(response).to be_success
-    expect(response).to have_http_status(200)
-    expect(response).to render_template("index")
-  end
+	it "Renders index template" do
+		get :index
+		expect(response).to be_success
+		expect(response).to have_http_status(200)
+		expect(response).to render_template("index")
+	end
 end
