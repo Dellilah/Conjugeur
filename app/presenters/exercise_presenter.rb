@@ -17,4 +17,8 @@ class ExercisePresenter
   def person
     @person ||= verb_form.person.name
   end
+
+  def french_letters
+    %w(à â æ ç é è ê ë ï î ô œ ù û ü)
+  end
 end

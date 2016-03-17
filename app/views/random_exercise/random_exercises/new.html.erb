@@ -17,8 +17,17 @@
     </ul>
     <div>
       <%= f.label :answer %>
-      <%= f.text_field :answer %>
+      <%= f.text_field :answer, class: "x-answer" %>
+    </div>
+
+    <div class="x-french-letter">
+      <%= render partial: "shared/letter_button", collection: @context.presenter.french_letters, as: :letter %>
     </div>
     <%= f.submit "Sprawdż!" %>
   <% end %>
 </div>
+
+
+<script>
+  $(document).on("page:change", (new ExerciseAnswer).init());
+</script>
