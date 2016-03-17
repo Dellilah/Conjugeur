@@ -4,9 +4,9 @@
     <div class="form-group row">
       <label class="col-sm-1">Czasy gramatyczne</label>
       <div class="col-sm-11">
-        <button type="button" class="btn btn-info btn-sm x-check-all-tenses" data-value="false">Zaznacz wszystkie czasy</button>
+        <button type="button" class="btn btn-info btn-sm x-check-all" data-value="false" data-label="czasy">Zaznacz wszystkie czasy</button>
         <br>
-        <div class="x-all-tenses">
+        <div class="x-all-fields">
           <%= render partial: "exercise_settings/elements/labeled_multiple_checkbox", collection: Conjugation::Tense.all, as: :tense, locals: { f: f, key: :tenses } %>
         </div>
       </div>
@@ -14,9 +14,9 @@
     <div class="form-group row">
       <label class="col-sm-1">Grupy czasowników</label>
       <div class="col-sm-11">
-        <button type="button" class="btn btn-info btn-sm x-check-all-groups" data-value="false">Zaznacz wszystkie grupy</button>
+        <button type="button" class="btn btn-info btn-sm x-check-all" data-value="false" data-label="grupy">Zaznacz wszystkie grupy</button>
         <br>
-        <div class="x-all-groups">
+        <div class="x-all-fields">
           <%= render partial: "exercise_settings/elements/multiple_checkbox", collection: (1..3).to_a, as: :el, locals: { f: f, key: :groups } %>
         </div>
       </div>

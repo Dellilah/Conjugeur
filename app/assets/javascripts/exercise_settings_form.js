@@ -56,29 +56,26 @@ var ExerciseSettingsForm = function () {
     });
   };
 
+  this.checkAll = function (field) {
+    var that = this;
+    var allFields = $(field).parent().find(".x-all-fields");
+    var label = $(field).data('label');
+    if ($(field).data('value') === false) {
+      $(field).data('value', true);
+      $(field).text("Odznacz wszystkie "+label);
+      that.setAll(allFields, true);
+    } else {
+      $(field).data('value', false);
+      $(field).text("Zaznacz wszystkie "+label);
+      that.setAll(allFields, false);
+    }
+  }
+
   this.init = function () {
     var that = this;
-    $(that.checkAllTenses).on('click', function () {
-      if ($(this).data('value') === false) {
-        $(this).data('value', true);
-        $(this).text("Odznacz wszystkie czasy");
-        that.setAll(that.allTenses, true);
-      } else {
-        $(this).data('value', false);
-        $(this).text("Zaznacz wszystkie czasy");
-        that.setAll(that.allTenses, false);
-      }
-    });
-    $(that.checkAllGroups).on('click', function () {
-      if ($(this).data('value') === false) {
-        $(this).data('value', true);
-        $(this).text("Odznacz wszystkie grupy");
-        that.setAll(that.allGroups, true);
-      } else {
-        $(this).data('value', false);
-        $(this).text("Zaznacz wszystkie grupy");
-        that.setAll(that.allGroups, false);
-      }
+
+    $('.x-check-all').on('click', function () {
+      that.checkAll(this);
     });
 
     $('.x-autocomplete').autocomplete({
