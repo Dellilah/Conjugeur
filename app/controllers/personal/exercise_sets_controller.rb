@@ -2,9 +2,7 @@ module Personal
   class ExerciseSetsController < ApplicationController
     before_filter :load_context
 
-    def new
-      # @context = User::ExerciseSetContext.new(params, session)
-    end
+    def new; end
 
     def index; end
 

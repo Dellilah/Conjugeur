@@ -13,7 +13,7 @@ describe Personal::ExerciseSetsPresenter do
     included_verbs_ids: [4,5,6])
   }
 
-  subject { described_class.new }
+  subject { described_class.new({}) }
 
   describe "#tenses_list" do
     it "returns list of tenses names" do

@@ -1,0 +1,31 @@
+<%= form_for(@context.form, as: :exercise_settings_form, url: @context.presenter.submit_path) do |f| %>
+  <%= f.render_errors %>
+  <div class="form-group row">
+    <label class="col-sm-1">Czasy gramatyczne</label>
+    <div class="col-sm-11">
+      <button type="button" class="btn btn-info btn-sm x-check-all" data-value="false" data-label="czasy">Zaznacz wszystkie czasy</button>
+      <br>
+      <div class="x-all-fields">
+        <%= render partial: "shared/exercise_settings_form/elements/labeled_multiple_checkbox", collection: Conjugation::Tense.all, as: :tense, locals: { f: f, key: :tenses } %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-1">Grupy czasowników</label>
+    <div class="col-sm-11">
+      <button type="button" class="btn btn-info btn-sm x-check-all" data-value="false" data-label="grupy">Zaznacz wszystkie grupy</button>
+      <br>
+      <div class="x-all-fields">
+        <%= render partial: "shared/exercise_settings_form/elements/multiple_checkbox", collection: (1..3).to_a, as: :el, locals: { f: f, key: :groups } %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row x-excluded-verbs-container">
+    <%= render partial: "shared/exercise_settings_form/elements/excluded_verbs", locals: { f: f, presenter: @context.presenter } %>
+  </div>
+
+  <div class="form-group row x-included-verbs-container">
+    <%= render partial: "shared/exercise_settings_form/elements/included_verbs", locals: { f: f, presenter: @context.presenter } %>
+  </div>
+  <%= f.submit("Ćwiczenia: start!", class: "btn btn-primary btn-lg btn-block") %>
+<% end %>

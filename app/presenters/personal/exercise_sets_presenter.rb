@@ -1,5 +1,5 @@
 module Personal
-	class ExerciseSetsPresenter
+	class ExerciseSetsPresenter < ::ExerciseFormPresenter
 
 		def tenses_list(exercise_set)
 			exercise_set.tenses.map(&:label).join(", ")
@@ -15,6 +15,10 @@ module Personal
 
 		def groups_list(exercise_set)
 			exercise_set.groups.map{ |group| roman_map[group] }.join(", ")
+		end
+
+		def submit_path
+			"/zestawy-cwiczeniowe"
 		end
 
 		private

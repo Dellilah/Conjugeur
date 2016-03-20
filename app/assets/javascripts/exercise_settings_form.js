@@ -31,7 +31,7 @@ var ExerciseSettingsForm = function () {
     var previous_ids = $(node.parentNode).find('.x-verbs-hidden').val();
     var source = $(node.parentNode).data('source');
     $.ajax({
-      url: '/kryteria/reload-section',
+      url: '/reload-section',
       data: {
         exercise_settings_form: that.setData(source, previous_ids, suggestion)
       },

@@ -3,6 +3,6 @@
   <%= text_field_tag(:included, nil, class: 'x-autocomplete') %>
   <%= f.hidden_field(:included_verbs, class: 'x-verbs-hidden') %>
   <div class="x-verbs-result">
-	 	<%= render partial: "exercise_settings/elements/verb", collection: presenter.included_verbs, as: :verb %>
+	 	<%= render partial: "shared/exercise_settings_form/elements/verb", collection: presenter.included_verbs, as: :verb %>
   </div>
 </div>

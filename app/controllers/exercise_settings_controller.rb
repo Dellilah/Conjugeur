@@ -14,8 +14,6 @@ class ExerciseSettingsController < ApplicationController
 
   def exercise; end
 
-  def reload_section; end
-
   private
 
   def load_context

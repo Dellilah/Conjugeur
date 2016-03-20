@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'main_page#index'
 
+  post 'reload-section'  => 'sections#reload'
+
   resource :exercise_settings, path: 'kryteria' do
     # get '/cwicz', action: :exercise, as: :exercise
-    post 'reload-section', action: :reload_section, as: :reload_section
   end
 
   scope module: :random_exercise, path: :losowe do
