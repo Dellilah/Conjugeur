@@ -1,5 +1,14 @@
 <div>
-  <%= render partial: "/shared/exercise_settings_form/form" %>
+	<%= form_for(@context.form, as: :exercise_settings_form, url: exercise_sets_path) do |f| %>
+		<%= f.hidden_field :_personal_set, value: true %>
+		<div class="form-group row">
+		  <label class="col-sm-2">Nazwa zestawu</label>
+	  	<div class="col-sm-10">
+				<%= f.text_field :name %>
+			</div>
+		</div>
+	  <%= render partial: "/shared/exercise_settings_form/form", locals: { f: f } %>
+	<% end %>
 </div>
 
 <script>

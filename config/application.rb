@@ -25,7 +25,7 @@ module Conjugeur
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.autoload_paths += %W(app/presenters app/policy_objects).map { |path| "#{config.root}/#{path}" }
+    config.autoload_paths += %W(lib app/presenters app/policy_objects).map { |path| "#{config.root}/#{path}" }
 
     require config.root.join('lib/default_form_builder.rb')
     config.action_view.default_form_builder = DefaultFormBuilder

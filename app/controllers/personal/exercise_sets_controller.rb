@@ -6,7 +6,14 @@ module Personal
 
     def index; end
 
-    # def show; end
+    def create
+      if @context.form.valid?
+        ::Personal::ExerciseSetSaver.perform(current_user, @context.form.attributes)
+        redirect_to exercise_sets_path
+      else
+        render :new
+      end
+    end
 
     # def edit; end
 

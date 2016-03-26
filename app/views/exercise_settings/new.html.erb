@@ -1,5 +1,7 @@
 <div>
-  <%= render partial: "/shared/exercise_settings_form/form" %>
+  <%= form_for(@context.form, as: :exercise_settings_form, url: exercise_settings_path) do |f| %>
+	  <%= render partial: "/shared/exercise_settings_form/form", locals: { f: f } %>
+	<% end %>
 </div>
 
 <script>

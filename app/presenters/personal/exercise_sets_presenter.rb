@@ -17,10 +17,6 @@ module Personal
 			exercise_set.groups.map{ |group| roman_map[group] }.join(", ")
 		end
 
-		def submit_path
-			"/zestawy-cwiczeniowe"
-		end
-
 		private
 
 		def roman_map
