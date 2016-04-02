@@ -14,12 +14,12 @@ module Personal
     private
 
     attr_reader :user, :settings
-    delegate :excluded_ids, :included_ids, :tenses, :groups, :name, to: :settings_retriever
+    delegate :excluded_verbs, :included_verbs, :tenses, :groups, :name, to: :settings_retriever
 
     def exercise_set_attributes
       {
-        excluded_verbs_ids: excluded_ids,
-        included_verbs_ids: included_ids,
+        excluded_verbs_ids: excluded_verbs,
+        included_verbs_ids: included_verbs,
         tenses_ids: tenses,
         groups: groups,
         name: name

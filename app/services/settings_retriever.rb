@@ -1,35 +1,19 @@
 class SettingsRetriever
-  attr_reader :settings
+  delegate :tenses, :groups, :excluded_verbs, :included_verbs, :name, to: :settings, allow_nil: true
 
-	def initialize(settings)
+  def initialize(settings)
     @settings = settings
   end
 
   def chosen_forms_ids
-    Conjugation::Form.where_in(tense_id: tenses, verb_id: verbs).map(&:id)
+    Conjugation::Form.where_in(tense_id: tenses, verb_id: verbs_ids).map(&:id)
   end
 
-  def verbs
-    ::ChosenVerbs.perform(groups, excluded_ids, included_ids).map(&:id)
+  def verbs_ids
+    ::ChosenVerbs.perform(groups, excluded_verbs, included_verbs).map(&:id)
   end
 
-  def tenses
-    settings[:tenses]
-  end
-
-  def groups
-    settings[:groups]
-  end
-
-  def excluded_ids
-    settings[:excluded_verbs]
-  end
-
-  def included_ids
-    settings[:included_verbs]
-  end
-
-  def name
-    settings.fetch(:name, "")
+  def settings
+    OpenStruct.new(@settings)
   end
 end

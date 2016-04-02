@@ -8,7 +8,7 @@ class ChosenVerbs
   end
 
   def perform
-    (groups_verbs + included_verbs) - excluded_verbs
+    (groups_verbs + included_verbs - excluded_verbs).uniq
   end
 
   private
