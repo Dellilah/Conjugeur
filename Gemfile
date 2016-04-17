@@ -51,6 +51,7 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '~> 3.1'
   gem 'shoulda-matchers', require: false
+  gem 'polishgeeks-dev-tools'
 end
 
 group :development do
