@@ -28,19 +28,19 @@ development:
   encoding: unicode
   database: conjugeur_development
   pool: 5
-  username: alicja
+  username: conjugeur
   password:
 production:
   adapter: postgresql
   encoding: unicode
   database: conjugeur_production
   pool: 5
-  username: alicja
+  username: conjugeur
   password:
 test:
   adapter: postgresql
   encoding: unicode
   database: conjugeur_test
   pool: 5
-  username: alicja
+  username: conjugeur
   password:
