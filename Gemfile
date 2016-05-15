@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -61,3 +61,6 @@ end
 
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 gem 'jquery-ui-rails'
+
+gem 'unicorn', '~> 4.9'
+gem 'pg', '~> 0.18.3'
