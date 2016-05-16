@@ -7,7 +7,7 @@ class Personal::ExerciseSet < ActiveRecord::Base
   serialize :tenses_ids, Array
 
   belongs_to :user
-  has_many :user_repetitions, class_name: "UserRepetition", foreign_key: 'exercise_set_id'
+  has_many :user_repetitions, class_name: "UserRepetition", foreign_key: 'personal_exercise_set_id'
 
   def tenses
     ::Conjugation::Tense.where_in(id: tenses_ids)

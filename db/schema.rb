@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510212907) do
+ActiveRecord::Schema.define(version: 20160516193409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20160510212907) do
     t.text    "groups"
     t.integer "user_id"
     t.string  "name"
-    t.text    "forms_ids"
   end
 
   add_index "personal_exercise_sets", ["user_id"], name: "index_personal_exercise_sets_on_user_id", using: :btree
@@ -46,13 +45,12 @@ ActiveRecord::Schema.define(version: 20160510212907) do
     t.integer  "repetition_interval"
     t.datetime "last_studied"
     t.integer  "user_id"
+    t.integer  "personal_exercise_set_id"
     t.integer  "form_id"
-    t.integer  "exercise_set_id"
   end
 
-  add_index "user_repetitions", ["exercise_set_id"], name: "index_user_repetitions_on_exercise_set_id"
-  add_index "user_repetitions", ["form_id"], name: "index_user_repetitions_on_form_id"
-  add_index "user_repetitions", ["user_id"], name: "index_user_repetitions_on_user_id"
+  add_index "user_repetitions", ["personal_exercise_set_id"], name: "index_user_repetitions_on_personal_exercise_set_id", using: :btree
+  add_index "user_repetitions", ["user_id"], name: "index_user_repetitions_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -77,4 +75,6 @@ ActiveRecord::Schema.define(version: 20160510212907) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "personal_exercise_sets", "users"
+  add_foreign_key "user_repetitions", "personal_exercise_sets"
+  add_foreign_key "user_repetitions", "users"
 end
