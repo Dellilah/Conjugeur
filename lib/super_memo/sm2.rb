@@ -18,6 +18,7 @@ module SuperMemo
         self.easiness_factor = calculate_easiness_factor(quality_of_recall)
         self.repetition_interval = calculate_interval(quality_of_recall)
         self.number_repetitions += 1
+        self.save
       end
       
       self.next_repetition = Date.today + repetition_interval
@@ -37,7 +38,6 @@ module SuperMemo
     end
 
     def calculate_interval(quality_of_recall)
-      return 0 if quality_of_recall == 3
       case number_repetitions
       when 0 then 1
       when 1 then 6
