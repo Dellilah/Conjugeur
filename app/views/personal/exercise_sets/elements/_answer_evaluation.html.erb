@@ -1,0 +1,15 @@
+<%= render partial: "personal/exercise_sets/elements/#{@template_path}" %>
+
+Oceń swoją odpowiedź
+<br>
+<%= form_for(@form, url: save_progress_exercise_sets_path) do |f| %>
+	<%= f.hidden_field :user_repetition_id %>
+	<br>
+	<div>
+		<% (1..5).each do |i| %>
+			<%= f.label :quality, i %>
+		  <%= f.radio_button :quality, i %>
+	  <% end %>
+	</div>
+	<%= f.submit "Zapisz"%>
+<% end %>

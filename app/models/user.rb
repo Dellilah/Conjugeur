@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
 	has_many :exercise_sets, 
 	class_name:  "Personal::ExerciseSet", 
 	foreign_key: :user_id
+
+  has_many :user_repetitions,
+  class_name: 'UserRepetition',
+  foreign_key: :user_id
 end

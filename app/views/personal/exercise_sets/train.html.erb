@@ -1,4 +1,6 @@
+<div class="hide overlay x-overlay"></div>
 <%= render partial: "shared/exercise_form", locals: { context: @context } %>
+<div class="display-modal hide x-answer-evaluation"></div>
 
 <script>
   $(document).on("page:change", (new FrenchLetters).init());

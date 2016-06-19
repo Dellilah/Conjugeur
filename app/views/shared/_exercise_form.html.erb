@@ -1,0 +1,28 @@
+<div>
+  <% if flash[:notice] %>
+    <p class="flash-notice"><%= flash[:notice] %></p>
+  <% end %>
+  <% if flash[:error] %>
+    <p class="flash-error"><%= flash[:error] %></p>
+  <% end %>
+  <%= form_for(context.form, url: context.submit_path, remote: context.try(:remote?)) do |f| %>
+    <%= f.render_errors %>
+    <%= f.hidden_field :form_id %>
+    <%= f.hidden_field :user_repetition_id %>
+    <br>
+    <ul>
+      <li>czasownik: <b><%= context.presenter.verb %></b></li>
+      <li>czas: <b><%= context.presenter.tense %></b></li>
+      <li>osoba: <b><%= context.presenter.person %></b></li>
+    </ul>
+    <div>
+      <%= f.label :answer %>
+      <%= f.text_field :answer, class: "x-answer" %>
+    </div>
+
+    <div class="x-french-letter">
+      <%= render partial: "shared/letter_button", collection: context.presenter.french_letters, as: :letter %>
+    </div>
+    <%= f.submit "Sprawdż!", class: "x-submit" %>
+  <% end %>
+</div>

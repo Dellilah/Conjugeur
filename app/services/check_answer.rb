@@ -8,7 +8,8 @@ class CheckAnswer
   def perform
     {
       result: answer_correct?,
-      correct: correct_form
+      correct: correct_form,
+      answer: attributes[:answer]
     }
   end
 

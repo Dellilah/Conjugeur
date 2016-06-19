@@ -18,12 +18,12 @@ module SuperMemo
         self.easiness_factor = calculate_easiness_factor(quality_of_recall)
         self.repetition_interval = calculate_interval(quality_of_recall)
         self.number_repetitions += 1
-        self.save
       end
       
       self.next_repetition = Date.today + repetition_interval
       self.last_studied = Date.today
       self.quality_of_last_recall = quality_of_recall
+      self.save
     end
 
     def scheduled_to_recall?

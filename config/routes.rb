@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   scope module: :personal do
     resource :exercise_sets, path: 'zestawy-cwiczeniowe' do
       get '/', action: :index, as: :index
+      get '/cwicz/:id', action: :train, as: :train
+      post '/cwicz/:id', action: :check, as: :check
+      post '/zapisz-postepy', action: :save_progress, as: :save_progress
     end
   end
 

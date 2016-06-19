@@ -1,12 +1,12 @@
 require 'rails_helper'
-
 describe Personal::ExerciseSetsController do
 
 	let(:user) { build(:user) }
   let(:context) { double(Personal::ExerciseSetsContext) }
 
+  login_user
+
 	before :each do
-	  sign_in user
     allow(Personal::ExerciseSetsContext).to receive(:new).and_return(context)
 	end
 
@@ -22,6 +22,18 @@ describe Personal::ExerciseSetsController do
 		expect(response).to be_success
 		expect(response).to have_http_status(200)
 		expect(response).to render_template("new")
+	end
+
+	context "When form is valid" do
+		before :each do
+			allow(subject).to receive(:get_exercise_set)
+		end
+		it "Renders train template" do
+			get :train, id: 1
+			expect(response).to be_success
+			expect(response).to have_http_status(200)
+			expect(response).to render_template("train")
+		end
 	end
 
 	context "When form is invalid" do

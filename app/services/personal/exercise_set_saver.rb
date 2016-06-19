@@ -8,7 +8,12 @@ module Personal
     end
 
     def perform
-      user.exercise_sets.create!(exercise_set_attributes)
+      ActiveRecord::Base.transaction do
+        exercise_set = user.exercise_sets.create!(exercise_set_attributes)
+        settings_retriever.chosen_forms_ids.each do |form_id|
+          user.user_repetitions.create!(form_id: form_id, exercise_set: exercise_set)
+        end
+      end
     end
 
     private
