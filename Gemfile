@@ -49,6 +49,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'spring'
+  gem "spring-commands-rspec"
   gem 'rspec-rails', '~> 3.1'
   gem 'shoulda-matchers', require: false
   gem 'polishgeeks-dev-tools'
