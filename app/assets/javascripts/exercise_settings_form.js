@@ -26,18 +26,22 @@ var ExerciseSettingsForm = function () {
     }
   };
 
-  this.addVerb = function (node, suggestion) {
-    var that = this;
-    var previous_ids = $(node.parentNode).find('.x-verbs-hidden').val();
-    var source = $(node.parentNode).data('source');
+  this.sendAjaxRequest = function (url, form_data) {
     $.ajax({
-      url: '/reload-section',
+      url: url,
       data: {
-        exercise_settings_form: that.setData(source, previous_ids, suggestion)
+        exercise_settings_form: form_data
       },
       type: 'POST',
       dataType: 'script'
     });
+  };
+
+  this.addVerb = function (node, suggestion) {
+    var that = this;
+    var previous_ids = $(node.parentNode).find('.x-verbs-hidden').val();
+    var source = $(node.parentNode).data('source');
+    that.sendAjaxRequest('/reload-section', that.setData(source, previous_ids, suggestion));
   };
 
   this.removeVerb = function (node) {
@@ -46,36 +50,25 @@ var ExerciseSettingsForm = function () {
     var verbId = $(node).data('id');
     var source = $(parentNode.parentNode.parentNode).data('source');
     var previous_ids = $(parentNode.parentNode).prev('.x-verbs-hidden').val();
-    $.ajax({
-      url: '/kryteria/reload-section',
-      data: {
-        exercise_settings_form: that.removeData(source, previous_ids, verbId)
-      },
-      type: 'POST',
-      dataType: 'script'
-    });
+    that.sendAjaxRequest('/kryteria/reload-section', that.removeData(source, previous_ids, verbId));
   };
 
   this.checkAll = function (field) {
     var that = this;
-    var allFields = $(field).parent().find(".x-all-fields");
-    var label = $(field).data('label');
-    if ($(field).data('value') === false) {
-      $(field).data('value', true);
-      $(field).text("Odznacz wszystkie "+label);
-      that.setAll(allFields, true);
-    } else {
-      $(field).data('value', false);
-      $(field).text("Zaznacz wszystkie "+label);
-      that.setAll(allFields, false);
-    }
+    var allFields = field.parent().find(".x-all-fields");
+    var fieldValue = field.data('value');
+    var labelsDict = { false: "Odznacz", true: "Zaznacz"};
+
+    field.data('value', !fieldValue);
+    that.setAll(allFields, !fieldValue);
+    field.text(labelsDict[fieldValue]+" wszystkie "+ field.data('label'));
   }
 
   this.init = function () {
     var that = this;
 
     $('.x-check-all').on('click', function () {
-      that.checkAll(this);
+      that.checkAll($(this));
     });
 
     $('.x-autocomplete').autocomplete({
