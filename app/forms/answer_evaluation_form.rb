@@ -1,0 +1,7 @@
+class AnswerEvaluationForm < BaseForm
+  attribute :user_repetition_id, Integer
+  attribute :quality, Integer
+
+  validates :user_repetition_id, presence: true
+  validates :quality, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5}
+end

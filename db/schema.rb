@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516193409) do
+ActiveRecord::Schema.define(version: 20160522182427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 20160516193409) do
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "user_repetitions", force: :cascade do |t|
-    t.decimal  "easiness_factor"
-    t.integer  "number_repetitions"
+    t.decimal  "easiness_factor",          default: 2.5
+    t.integer  "number_repetitions",       default: 0
     t.integer  "quality_of_last_recall"
-    t.datetime "next_repetition"
+    t.datetime "next_repetition",          default: '2016-05-22 00:00:00'
     t.integer  "repetition_interval"
     t.datetime "last_studied"
     t.integer  "user_id"

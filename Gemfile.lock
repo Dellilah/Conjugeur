@@ -294,6 +294,8 @@ GEM
       tilt (>= 1.3.3, < 2.1)
     slop (3.6.0)
     spring (1.4.4)
+    spring-commands-rspec (1.0.4)
+      spring (>= 0.9.1)
     sprockets (3.4.1)
       rack (> 1, < 3)
     sprockets-rails (2.3.3)
@@ -363,6 +365,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   shoulda-matchers
   spring
+  spring-commands-rspec
   toastr-rails
   turbolinks
   twitter-bootstrap-rails

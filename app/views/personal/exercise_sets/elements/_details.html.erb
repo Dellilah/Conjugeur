@@ -3,7 +3,7 @@
 		Zestaw: <strong><%= exercise_set.name %></strong>
 		Form do powtórzenia: xxx 
 		<!-- TODO : forms to repeat count -->
-		<%= button_tag "Ćwicz" %>
+		<%= link_to "Ćwicz", train_exercise_sets_path(exercise_set) %>
 		<%= link_to "Rozwiń", "#", class: "x-show-details", data: { group: exercise_set.id } %>
 		<%= link_to "Edytuj", "#" %>
 		<%= link_to "Staty", "#" %>

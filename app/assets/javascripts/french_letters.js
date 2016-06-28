@@ -1,4 +1,4 @@
-var ExerciseAnswer = function () {
+var FrenchLetters = function () {
 
   this.init = function () {
     var that = this;

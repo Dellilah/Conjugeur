@@ -1,4 +1,6 @@
 class ExerciseContext
+  include Rails.application.routes.url_helpers
+
   def initialize(params, contener)
     @params = params
     @contener = contener
@@ -14,6 +16,10 @@ class ExerciseContext
 
   def verb_form
     @verb_form ||= Conjugation::Form.find(draw_id)
+  end
+
+  def submit_path
+    check_random_exercises_path
   end
 
   private

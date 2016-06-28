@@ -1,0 +1,3 @@
+$('.x-overlay').removeClass( "hide" );
+$('.x-answer-evaluation').removeClass( "hide" );
+$('.x-answer-evaluation').html('<%= j(render partial: "personal/exercise_sets/elements/answer_evaluation", locals: { form: @form }) %>');
